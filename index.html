@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .first_col {
+      /* border: 1px solid red; */
+      padding:0;
+      margin:0;
+      /* border:1px solid red; */
+      
+    }
+.firstinnercol{
+   /* border: 1px solid blue; */
+   width:80%;
+   height:100%;
+background-image: url("images/bg-main-desktop.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+    .sec_col {
+/* border:1px solid red; */
+
+      margin: 0;
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: center;
+      padding-block: 130px;
+      padding-inline: 80px;
+    }
+.sec_innercol{
+  width:70%;
+}
+    .form-group {
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+   
+.card{
+    height: 176px;
+    width: 318px;
+}
+    .card img {
+      /* width: 250px; */
+      /* position: relative; */
+     
+      /* height:100px; */
+      /* margin: 10px 0; */
+      /* border:1px solid blue; */
+    }
+
+    .outerDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 800px */
+      /* border: 1px solid black;
+      padding: 40px */
+    }
+
+    .innerContainer {
+      width: 80%;
+      border: 1px solid black;
+      margin-top: 50px;
+      height: 600px
+    }
+.outer_container{
+  position: absolute;
+  left:392px;
+  /* border: 1px solid black; */
+
+  /* margin-right:147px; */
+}
+.firstCard{
+  border:none;
+  color:#fff;
+  border-radius:10px;
+  background-image:url("images/bg-card-front.png");
+ margin-left :-47px;
+  margin-bottom:30px;
+   background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+    justify-content:end;
+
+    padding:0 20px;
+}
+.firstCard_detail{
+  border:1px solid red;
+}
+.firstCard_num{
+
+}
+.firstCard_text{
+color:red;
+display: flex !important;
+flex-direction: column !important;
+justify-self: space-between;
+}
+.secCard{
+    border:none;
+  border-radius:10px;
+    background-image:url("images/bg-card-back.png");
+ background-repeat: no-repeat;
+      background-size: cover;
+margin-left:15px;
+}
+.secCard p{
+color: #fff;
+    position: absolute;
+    right: 35px;
+    top: 73px;
+}
+.btn{
+  font-size: 12px;
+}
+
+    @media screen and (max-width: 780px) {
+     .firstinnercol{
+  
+   width:100%;
+    height: 74%;
+background-image: url("images/bg-main-mobile.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+.innerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+      .form-group {
+        font-size: 10px;
+      }
+
+      .form-control {
+        font-size: 10px;
+      }
+.btn{
+  font-size: 10px;
+}
+      .sec_col {
+        padding: 10px 0px;
+      }
+
+      .outer_container{
+  position: absolute;
+      top: 167px;
+  left:155px;
+  /* border: 1px solid black; */
+
+  /* margin-right:147px; */
+}
+.card{
+       height: 132px;
+    width: 238px;
+}
+.firstCard{
+     margin-left: 55px;
+    margin-bottom: 183px;
+    z-index: 1;
+ }
+      .secCard{
+            margin-top: -395px;
+            margin-left:133px;
+}
+.secCard p{
+color: #fff;
+    position: absolute;
+    right: 35px;
+    top: 53px;
+}
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container outerDiv">
+    <div class="row innerContainer" style="background:rgb(255, 255, 255)">
+     <div class="col first_col">
+      <div class="firstinnercol">
+
+      </div>
+       
+     </div>
+      <div class="col sec_col ">
+       <div class="sec_innercol">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">CARDHOLDER NAME</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="e.g.Jane Appleseed">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">CARD NUMBER</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="e.g.1234 5678 9123 0000">
+          </div>
+          <div class="form-group d-flex" style="gap:5px">
+            <div>
+              <label for="exampleInputPassword1">EXP.DATE(MM/YY)</label>
+              <div className="" style="display:flex;gap:5px">
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="MM">
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="YY">
+        
+              </div>
+            </div>
+            <div>
+              <label for="exampleInputPassword1">CVC</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="e.g.123">
+            </div>
+          </div>
+          <button type="submit" class="btn bg-dark text-light w-100 ">Confirm</button>
+        </form>
+       </div>
+      </div>
+    </div>
+    <div class="outer_container" style="display:flex;flex-direction:column; font-family: Verdana, Arial, Helvetica, sans-serif;">
+      
+          <div class="firstCard card " >
+           
+            <!-- <img src="images/bg-card-front.png" alt=""> -->
+     
+      <div className="firstCard_detail ">
+          
+         <p className="firstCard_num">0000 0000 0000 0000</p>
+       
+          <div className="firstCard_text" >
+            <p>JANE APPLESEED</p>
+            <p>00/00</p>
+          </div>
+      </div>
+          
+          </div>
+          <div class="secCard card" ">
+           
+             <p>000</p>
+           
+
+            <!-- <img src="images/bg-card-back.png" alt=""> -->
+          </div>
+        
+      
+    </div>
+
+  </div>
+  <!-- 0000 0000 0000 0000
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm -->
+
+  <!-- Completed state start -->
+
+  <!-- Thank you!
+  We've added your card details
+  Continue
+   -->
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+
+</html>
